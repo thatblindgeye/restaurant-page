@@ -1,0 +1,189 @@
+:root {
+  /* text */
+  --text-black-high: rgba(0, 0, 0, 0.87);
+  --text-black-med: rgba(0, 0, 0, 0.6);
+  --text-black-low: rgba(0, 0, 0, 0.38);
+  --text-white-high: rgba(255, 255, 255, 0.87);
+  --text-white-med: rgba(255, 255, 255, 0.6);
+  --text-white-low: rgba(255, 255, 255, 0.38);
+  /* misc */
+  --active: 87%;
+  --inactive: 60%;
+  --disabled: 38%;
+}
+
+:root[theme="dark"] {
+  /* backgrounds */
+  --background-primary: rgb(18, 18, 18); /* text btn, top app bar (rest), */
+  --elevation-01dp: rgb(30, 30, 30); /* searchbar (rest), card (rest), switch */
+  --elevation-02dp: rgb(33, 33, 33); /* btn (resting) */
+  --elevation-03dp: rgb(37, 37, 37); /* refresh indicator search bar */
+  --elevation-04dp: rgb(39, 39, 39); /* top app bar (scrolled/resting) */
+  --elevation-06dp: rgb(44, 44, 44); /* floating action btn snackbar */
+  --elevation-08dp: rgb(46, 46, 46); /* bottom/side sheet, btm nav/app bar, menu/submenu, card (picked up), btn (pressed) */
+  --elevation-12dp: rgb(51, 51, 51); /* floating action btn (pressed) */
+  --elevation-16dp: rgb(54, 54, 54); /* modal bottom/side, nav drawer */
+  --elevation-24dp: rgb(56, 56, 56); /* dialogue */
+  /* brand colors */
+  --color-primary: ; /* 200 tonal range */
+  --color-primary-var: ; /* 500 tonal range */
+  --color-secondary: ; /* 50-200 tonal range */
+  --color-secondary-var: ; /* 50-200 tonal range */
+  /* text */
+  /* borders */
+  --border-primary: rgb(240, 240, 240);
+  --focus: 2px dotted rgb(224, 224, 224);
+  /* misc */
+  --error: rgb(207, 102, 121);
+  --warning: rgb(255, 245, 157);
+  --success: rgb(165, 214, 167);
+  --info: rgb(144, 202, 249);
+  --theme-toggle-color: rgba(255, 255, 255, 0.38);
+}
+
+:root[theme="light"] {
+  /* backgrounds */
+  --background-primary: rgb(240, 240, 240);
+  /* brand colors */
+  --color-primary: ; /* 500 tonal range */
+  --color-primary-var: ; /* +/- 200 of primary */
+  --color-secondary: ; /* 500 tonal range */
+  --color-secondary-var: ; /* +/- 200 of primary */
+  /* text */
+  /* borders */
+  --border-primary: rgb(18, 18, 18);
+  --focus: 2px dotted rgb(224, 224, 224);
+  /* misc */
+  --error: rgb(176, 0, 32);
+  --warning: rgb(255, 235, 59);
+  --success: rgb(76, 175, 80);
+  --info: rgb(33, 150, 243);
+  --theme-toggle-color: rgba(255, 255, 255, 0.87);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+*:focus {
+  outline: var(--focus);
+}
+
+body {
+  background-color: var(--background-primary);
+}
+
+#accessibility-container {
+  display: flex;
+  align-items: center;
+  position: absolute;
+  background-color: rgb(255, 0, 0);
+  /* box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.6);
+  border-bottom-right-radius: 25px; */
+  transition: background-color 0.5s linear;
+}
+
+
+
+.accessibility-tab {
+  margin-left: 25px;
+  padding: 0 10px;
+  font-size: 0.9rem;
+}
+
+.accessibility-tab:hover {
+  cursor: default;
+}
+
+.accessibility-contents {
+  display: flex;
+  align-items: center;
+  margin-left: -310px;
+  padding: 5px 10px 10px;
+  transition: margin-left 0.5s ease-in-out;
+}
+
+#accessibility-container:focus-within .accessibility-contents,
+#accessibility-container:hover .accessibility-contents {
+  margin-left: 0;
+}
+
+.skip-link {
+  margin-right: 50px;
+  padding: 2px;
+}
+
+.theme-toggle-container {
+  width: 42px;
+  height: 22px;
+  padding: 2px;
+}
+
+.theme-toggle-container:hover {
+  cursor: pointer;
+}
+
+/* #accessibility-container:focus,
+.theme-toggle-container:focus,
+.skip-link:focus {
+  outline: var(--focus);
+} */
+
+.theme-toggle-track {
+  width: 42px;
+  height: 22px;
+  border-radius: 50px;
+  background-color: var(--background-primary);
+  border: 2px solid var(--border-primary);
+  opacity: 0.8;
+}
+
+.theme-toggle-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  width: 26px;
+  height: 26px;
+  top: -23px;
+  border-radius: 50%;
+  background-color: rgb(18, 18, 18);
+  transition: left 0.2s;
+}
+
+.material-icons {
+  color: var(--theme-toggle-color);
+}
+
+.material-icons.md-18 {
+  font-size: 18px;
+}
+
+.upper-nav {
+  width: 100%;
+
+  padding: 2.5rem 10px 5px;
+  background: red;
+}
+
+h1 {
+  margin: 0;
+}
+
+#main {
+  height: 100vh;
+  padding-top: 10px;
+  color: white;
+}
+
+.page-container {
+  text-align: center;
+}
+
+.lower-nav {
+  width: 100%;
+  height: 50px;
+  bottom: 0;
+  left: 0;
+  background: rgb(4, 0, 255);
+}
