@@ -37,13 +37,13 @@ const siteTheme = (() => {
   const _setDarkTheme = () => {
     themeContainer.setAttribute("aria-checked", "false");
     document.documentElement.setAttribute("theme", "dark");
-    themeToggle.style.left = "-2px";
+    themeToggle.style.left = "0";
   };
 
   const _setLightTheme = () => {
     themeContainer.setAttribute("aria-checked", "true");
     document.documentElement.setAttribute("theme", "light");
-    themeToggle.style.left = "18px";
+    themeToggle.style.left = "16px";
   };
 
   themeContainer.addEventListener("click", _changeTheme);
