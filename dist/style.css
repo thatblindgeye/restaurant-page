@@ -31,6 +31,8 @@
   --color-secondary: ; /* 50-200 tonal range */
   --color-secondary-var: ; /* 50-200 tonal range */
   /* text */
+  --header-text: rgba(255, 255, 255, 0.87);
+  --header-links: rgba(255, 255, 255, 0.6);
   /* borders */
   --border-primary: rgb(240, 240, 240);
   --focus: 2px dotted rgb(224, 224, 224);
@@ -51,6 +53,8 @@
   --color-secondary: ; /* 500 tonal range */
   --color-secondary-var: ; /* +/- 200 of primary */
   /* text */
+  --header-text: rgba(0, 0, 0, 0.87);
+  --header-links: rgba(0, 0, 0, 0.6);
   /* borders */
   --border-primary: rgb(18, 18, 18);
   --focus: 2px dotted rgb(18, 18, 18);
@@ -71,7 +75,8 @@
 }
 
 body {
-  background: url("images/restaurant-background.jpg") no-repeat scroll center;
+  background: url("images/restaurant-background.jpg") no-repeat center;
+  background-attachment: fixed;
   background-size: cover;
   background-color: var(--background-primary);
 }
@@ -97,6 +102,7 @@ header {
 #accessibility-tab {
   margin-left: 25px;
   padding: 0 10px;
+  color: var(--header-text);
   font-size: 0.9rem;
 }
 
@@ -120,6 +126,8 @@ header {
 .skip-link {
   margin-right: 25px;
   padding: 2px;
+  color: var(--header-text);
+  text-decoration: none;
 }
 
 .theme-toggle-container {
@@ -150,6 +158,7 @@ header {
   top: -24px;
   border-radius: 50%;
   background-color: rgb(18, 18, 18);
+  border: 1px solid white;
   transition: left 0.2s;
 }
 
@@ -169,7 +178,7 @@ header {
 }
 
 .upper-nav a {
-  color: var(--text-black-high);
+  color: var(--header-text);
   text-decoration: none;
 }
 
@@ -180,28 +189,43 @@ header {
 .nav-links ul {
   display: flex;
   margin: 0;
-}
-
-.nav-links li {
-  margin: 0 20px;
-  font-size: 1.25rem;
   list-style: none;
-  text-decoration: none;
 }
 
-.nav-links li:hover {
-  border-bottom: 2px solid white;
+.nav-links a {
+  margin: 0 20px;
+  padding: 5px;
+  font-size: 1.25rem;
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.nav-links a:hover,
+.nav-links a:focus,
+.nav-links li:focus-within {
+  opacity: 1;
 }
 
 #main {
+  display: flex;
+  justify-content: center;
   height: 100vh;
-  padding-top: 10px;
+  padding-top: 25px;
   color: white;
   overflow-x: auto;
+}
+
+.home-container {
+  width: 80vw;
+  height: 300px;
+  padding: 20px;
+  background-color: var(--header-bg);
+  color: var(--header-text);
+  opacity: 0.9;
 }
 
 .lower-nav {
   width: 100%;
   height: 50px;
-  background: rgba(4, 0, 255, 0.404);
+  background: rgb(4, 0, 255);
 }
