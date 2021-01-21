@@ -20,7 +20,7 @@
   <body>
     <div id="content">
       <header>
-        <div id="accessibility-container" tabindex="0">
+        <div id="accessibility-container" tabindex="0" aria-labelledby="accessibility-tab">
           <div class="accessibility-contents">
             <a href="#main" class="skip-link">Skip to main content</a>
             <div class="theme-toggle-container" role="checkbox" aria-checked="false" tabindex="0" aria-label="Toggle Light theme">
@@ -30,18 +30,29 @@
               </span>
             </div>
           </div>
-          <div class="accessibility-tab">Display & Accessibility</div>
+          <div id="accessibility-tab">Display & Accessibility</div>
         </div>
         <nav class="upper-nav">
-          <h1>Zomb-eats</h1>
+          <div class="logo"><a href="#">Zomb-eats</a></div>
+          <div class="nav-links">
+            <ul>
+              <li><a href="#">Menu</a></li>
+              <li><a href="#">Contact Us</a></li>
+            </ul>
+          </div>
         </nav>
       </header>
 
       <div id="main">
-        <div class="page-container">Welcome to Zomb-eats, the #1 eatery for zombies in all of New Seattle!</div>
+        <div class="home-container">Welcome to Zomb-eats, the #1 eatery for zombies in all of New Seattle!</div>
       </div>
     </div>
 
+    <footer>
+      <nav class="lower-nav">
+
+      </nav>
+    </footer>
 
     <script src="main.js"></script>
   </body>
