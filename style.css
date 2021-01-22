@@ -241,15 +241,17 @@ footer a {
 
 .nav-links ul {
   display: flex;
-  justify-content: space-around;
-  align-items: center;
   margin: 0;
   padding: 0;
-  list-style: none;
 }
 
 .nav-links li {
   margin-right: 50px;
+  list-style: none;
+}
+
+.nav-links li:last-of-type {
+  margin-right: 0;
 }
 
 .link {
@@ -288,8 +290,7 @@ footer a {
 
 footer {
   display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  justify-content: space-around;
   width: 100%;
   padding: 15px;
   font-family: "Roboto", Verdana, Geneva, Tahoma, sans-serif;
@@ -297,13 +298,19 @@ footer {
   color: var(--main-text);
 }
 
-footer small {
-  width: 100%;
-  margin-bottom: 10px;
+.left-footer,
+.right-footer {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+
+.left-footer {
   text-align: center;
 }
 
 footer nav>a {
+  margin-top: 10px;
   padding: 2px;
 }
 
@@ -312,9 +319,7 @@ footer nav>a:focus {
   border-bottom: 1px solid var(--header-links);
 }
 
-footer div {
-  width: 100%;
-  margin: 20px 0 10px;
+.right-footer {
   text-align: center;
 }
 
@@ -324,7 +329,56 @@ footer img {
   opacity: 0.6;
 }
 
+.right-footer a:focus {
+  outline: none;
+}
+
+.right-footer a:focus img {
+  outline: var(--focus);
+}
+
 footer img:hover,
 footer a:focus img {
   opacity: 1;
 }
+
+@media only screen and (max-width: 700px) {
+  .upper-nav {
+    height: 150px;
+    flex-direction: column;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  footer {
+    flex-direction: column;
+  }
+
+  .left-footer {
+    margin-bottom: 20px;
+  }
+}
+
+@media only screen and (max-width: 350px) {
+  #accessibility-container:focus-within #accessibility-tab,
+  #accessibility-container:hover #accessibility-tab {
+    display: none;
+  }
+
+  .upper-nav {
+    height: 125px;
+  }
+
+  .logo a {
+    font-size: 2rem;
+  }
+  
+  .nav-links {
+    margin-left: 0;
+  }
+
+  .link {
+    font-size: 1.25rem;
+  }
+}
+
