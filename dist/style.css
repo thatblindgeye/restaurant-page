@@ -136,11 +136,21 @@ header {
   margin-left: 0;
 }
 
+#accessibility-container:focus-within #accessibility-tab,
+#accessibility-container:hover #accessibility-tab {
+  color: var(--blood-text);
+}
+
 .skip-link {
   margin-right: 25px;
   padding: 2px;
   color: var(--header-text);
   text-decoration: none;
+}
+
+.skip-link:hover,
+.skip-link:focus {
+  color: var(--blood-text);
 }
 
 .theme-toggle-container {
@@ -187,7 +197,7 @@ header {
   display: flex;
   align-items: center;
   width: 100%;
-  padding: 2.5rem 10px 5px;
+  padding: 50px 10px 5px;
 }
 
 .upper-nav a {
@@ -195,10 +205,19 @@ header {
   text-decoration: none;
 }
 
-.logo {
-  text-shadow: 1px 1px 0 red;
+.logo a {
   font-family: "Lacquer", Verdana, sans-serif;
   font-size: 3rem;
+}
+
+.logo:hover > a,
+.logo > a:focus {
+  color: var(--blood-text);
+}
+
+.logo:hover span,
+.logo a:focus > span {
+  color: var(--header-text);
 }
 
 .logo span {
