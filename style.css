@@ -14,7 +14,8 @@
 
 :root[theme="dark"] {
   /* backgrounds */
-  --header-bg: rgb(18,18,18);
+  --header-bg: rgb(18, 18, 18);
+  --main-card-bg: rgb(30, 30, 30);
   --elevation-00dp: rgb(18, 18, 18); /* text btn, top app bar (rest), */
   --elevation-01dp: rgb(30, 30, 30); /* searchbar (rest), card (rest), switch */
   --elevation-02dp: rgb(33, 33, 33); /* btn (resting) */
@@ -33,6 +34,7 @@
   /* text */
   --header-text: rgba(255, 255, 255, 0.87);
   --header-links: rgba(255, 255, 255, 0.6);
+  --blood-text: rgb(255, 117, 117);
   /* borders */
   --border-primary: rgb(240, 240, 240);
   --focus: 2px dotted rgb(224, 224, 224);
@@ -47,6 +49,7 @@
 :root[theme="light"] {
   /* backgrounds */
   --header-bg: rgb(240, 240, 240);
+  --main-card-bg: rgb(220, 220, 220);
   /* brand colors */
   --color-primary: ; /* 500 tonal range */
   --color-primary-var: ; /* +/- 200 of primary */
@@ -55,6 +58,7 @@
   /* text */
   --header-text: rgba(0, 0, 0, 0.87);
   --header-links: rgba(0, 0, 0, 0.6);
+  --blood-text: rgba(148, 0, 0, 0.87);
   /* borders */
   --border-primary: rgb(18, 18, 18);
   --focus: 2px dotted rgb(18, 18, 18);
@@ -75,10 +79,12 @@
 }
 
 body {
+  height: 100vh;
   background: url("images/restaurant-background.jpg") no-repeat center;
   background-attachment: fixed;
   background-size: cover;
   background-color: var(--background-primary);
+  font-family: "Teko", Verdana, sans-serif;
 }
 
 header {
@@ -90,7 +96,9 @@ header {
   align-items: center;
   position: absolute;
   width: 100%;
-  background-color: var(--background-primary);
+  background-color: var(--header-bg);
+  font-size: 1.25rem;
+  letter-spacing: 2px;
   transition: box-shadow 0.5s linear;
 }
 
@@ -101,20 +109,25 @@ header {
 
 #accessibility-tab {
   margin-left: 25px;
-  padding: 0 10px;
+  padding: 0px 10px;
   color: var(--header-text);
-  font-size: 0.9rem;
+  font-size: 1.25rem;
+  letter-spacing: 2px;
 }
 
 #accessibility-tab:hover {
   cursor: default;
 }
 
+#accessibility-tab .material-icons {
+  vertical-align: middle;
+}
+
 .accessibility-contents {
   display: flex;
   align-items: center;
-  margin-left: -285px;
-  padding: 5px 10px 10px;
+  margin-left: -280px;
+  padding: 7px 10px 10px;
   transition: margin-left 0.5s ease-in-out;
 }
 
@@ -162,7 +175,7 @@ header {
   transition: left 0.2s;
 }
 
-.material-icons {
+.theme-toggle-switch .material-icons {
   color: var(--theme-toggle-color);
 }
 
@@ -182,50 +195,69 @@ header {
   text-decoration: none;
 }
 
-.logo a {
+.logo {
+  text-shadow: 1px 1px 0 red;
+  font-family: "Lacquer", Verdana, sans-serif;
   font-size: 3rem;
+}
+
+.logo span {
+  font-family: "Teko", Verdana, sans-serif;
+  letter-spacing: 4px;
+}
+
+.nav-links {
+  margin-left: 100px;
 }
 
 .nav-links ul {
   display: flex;
+  justify-content: space-around;
+  align-items: center;
   margin: 0;
+  padding: 0;
   list-style: none;
 }
 
-.nav-links a {
-  margin: 0 20px;
-  padding: 5px;
-  font-size: 1.25rem;
+.nav-links li {
+  width: 125px;
+}
+
+.link {
+  font-size: 2rem;
   text-decoration: none;
-  opacity: 0.8;
+  opacity: 0.87;
 }
 
 .nav-links a:hover,
-.nav-links a:focus,
-.nav-links li:focus-within {
+.nav-links a:focus {
+  color: var(--blood-text);
   opacity: 1;
 }
 
 #main {
   display: flex;
-  justify-content: center;
   height: 100vh;
+  justify-content: center;
   padding-top: 25px;
   color: white;
+  font-family: "Roboto";
   overflow-x: auto;
 }
 
-.home-container {
+.home-container-wide {
   width: 80vw;
-  height: 300px;
-  padding: 20px;
-  background-color: var(--header-bg);
+  margin-bottom: 50px;
+  padding: 30px;
+  background-color: var(--main-card-bg);
   color: var(--header-text);
+  font-size: 1rem;
+  letter-spacing: 1px;
   opacity: 0.9;
 }
 
 .lower-nav {
   width: 100%;
   height: 50px;
-  background: rgb(4, 0, 255);
+  background: rgb(184, 0, 0);
 }
