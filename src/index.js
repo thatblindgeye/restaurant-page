@@ -1,5 +1,7 @@
 "use strict";
 
+import loadMainPage from "./load-page";
+
 const siteSettings = (() => {
   const saveToLocal = () => {
     localStorage.setItem(
@@ -59,4 +61,20 @@ const siteTheme = (() => {
   });
 
   window.addEventListener("load", _loadTheme);
+})();
+
+const renderContent = (() => {
+  const _mainContent = document.querySelector(".main-container");
+
+  const _clearContent = () => {
+    Array.from(_mainContent.children).forEach(item => {
+      _mainContent.removeChild(item);
+    });
+  };
+
+  window.addEventListener("load", () => {
+    loadMainPage;
+  })
+
+  
 })();
