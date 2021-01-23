@@ -1,8 +1,9 @@
 "use strict";
 
-// import loadMainPage from "./load-page";
-// import loadHomeContents from "./home";
-// import loadMenuContents from "./menu";
+import loadMainPage from "./load-page";
+import loadHomeContents from "./home";
+import loadMenuContents from "./menu";
+import loadContactContents from "./contact";
 
 const siteSettings = (() => {
   const saveToLocal = () => {
@@ -79,7 +80,7 @@ const renderContent = (() => {
 
   window.addEventListener("load", () => {
     // loadMainPage();
-    // loadHomeContents();
+    loadHomeContents();
   });
 
   logoBtn.addEventListener("click", () => {
@@ -92,8 +93,8 @@ const renderContent = (() => {
     loadMenuContents();
   });
 
-  // contactBtn.addEventListener("click", () => {
-  //   _clearContent();
-  // });
-  
+  contactBtn.addEventListener("click", () => {
+    _clearContent();
+    loadContactContents();
+  });
 })();
