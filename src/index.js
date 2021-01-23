@@ -77,8 +77,8 @@ const renderContent = (() => {
   };
 
   window.addEventListener("load", () => {
-    loadMainPage;
-    loadHomeContents();
+    // loadMainPage;
+    // loadHomeContents();
   });
 
   logoBtn.addEventListener("click", () => {

@@ -49,7 +49,7 @@ const loadHomeContents = () => {
   const eventContent = document.createElement("p");
   eventContain.classList.add("tab-container", "event-container");
   eventHead.textContent = "Avatar Day Festivi-teas";
-  eventContent.textContent = "It's almost here! Come down to The Jasmine Dragon for our 69th annual Avatar Day celebration. Enjoy our Avatar themed food items and the performances of The Ember Island Players. Be sure to also order the famous Jasmine Dragon Tea Flight, where you get to experience an assortment of teas from the Fire Nation to the Earth Kingdom, and everywhere in between."
+  eventContent.textContent = "It's almost here! Come down to The Jasmine Dragon for our 69th annual Avatar Day celebration. Enjoy Avatar themed food items and the performances of The Ember Island Players. And don't forget about our famous Jasmine Dragon Tea Flight, here for a limited time only! Experience an assortment of teas from the Fire Nation to the Earth Kingdom, and everywhere in between."
 
   eventContain.appendChild(eventHead);
   eventContain.appendChild(eventContent);
