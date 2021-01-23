@@ -21,6 +21,7 @@
   --main-card-bg: rgb(46, 46, 46);
   --review-bg:  rgb(54, 54, 54);
   --menu-item-card: rgb(54, 54, 54);
+  --hours-bg: rgb(54, 54, 54);
   --footer-bg: rgba(39, 30, 16, 0.87);
   /* background references */
   --elevation-00dp: rgb(18, 18, 18); /* text btn, top app bar (rest), */
@@ -64,6 +65,7 @@
   --main-card-bg: rgb(220, 220, 220);
   --review-bg:  rgb(200, 200, 200);
   --menu-item-card: rgb(220, 220, 220);
+  --hours-bg: rgb(240, 240, 240);
   --footer-bg: rgb(243, 189, 0, 0.87);
   /* brand colors */
   --color-primary: rgb(243, 189, 0); /* 500 tonal range */
@@ -344,7 +346,7 @@ footer a {
   font-size: 1.1rem;
 }
 
-.review-container p:nth-of-type(2) {
+.review-container p:nth-of-type(even) {
   background-color: var(--review-bg);
   color: var(--main-text);
   border-bottom-right-radius: 0;
@@ -447,6 +449,67 @@ footer a {
   text-align: left;
 }
 
+.message-form {
+  width: 100%;
+  margin-top: 25px;
+}
+
+.message-form form {
+  display: flex;
+  flex-direction: column;
+}
+
+form input {
+  width: 100%;
+  height: 2rem;
+  font-size: 1.25rem;
+}
+
+form label {
+  margin-bottom: 30px;
+  padding: 5px 5px 0;
+}
+
+form textarea {
+  width: 100%;
+  height: 100px;
+  padding: 5px;
+  resize: vertical;
+}
+
+.restaurant-hours {
+  height: max-content;
+}
+
+.restaurant-hours caption {
+  margin-bottom: 25px;
+  font-size: 2rem;
+}
+
+.restaurant-hours table {
+  width: 100%;
+  border-spacing: 5px;
+  border-collapse: collapse;
+}
+
+.restaurant-hours thead th {
+  padding-bottom: 5px;
+  border-bottom: 1px solid var(--primary-border);
+}
+
+.restaurant-hours th {
+  text-align: left;
+  padding: 0 10px;
+}
+
+.restaurant-hours tr:nth-of-type(even) {
+  background-color: var(--hours-bg);
+}
+
+.restaurant-hours td {
+  padding: 5px 10px;
+}
+
 footer {
   display: flex;
   justify-content: space-around;
@@ -500,9 +563,20 @@ footer a:focus {
   }
 }
 
+@media only screen and (max-width: 1200px) {
+  .contact {
+    width: 45%;
+  }
+
+  .restaurant-hours {
+    width: 45%;
+  }
+}
+
 @media only screen and (max-width: 1025px) {
   .main-container {
     flex-direction: column;
+    align-content: center;
   }
 
   .tab-container {
@@ -520,6 +594,15 @@ footer a:focus {
 
   .menu-grid {
     grid-template-columns: 1fr 1fr;
+  }
+
+  .contact {
+    width: 90%;
+  }
+
+  .restaurant-hours {
+    width: 90%;
+    margin-top: 50px;
   }
 }
 
@@ -549,12 +632,17 @@ footer a:focus {
 
 @media only screen and (max-width: 525px) {
   .main-container {
-    width: 80vw;
+    width: 100vw;
   }
 
   .notice-container,
   .review-container {
-  min-width: 0px;
+    min-width: 0px;
+  }
+
+  .contact,
+  .restaurant-hours {
+    width: 100%;
   }
 
   footer {
