@@ -1,6 +1,7 @@
 "use strict";
 
 import loadMainPage from "./load-page";
+import loadHomeContents from "./home";
 
 const siteSettings = (() => {
   const saveToLocal = () => {
@@ -65,6 +66,9 @@ const siteTheme = (() => {
 
 const renderContent = (() => {
   const _mainContent = document.querySelector(".main-container");
+  const logoBtn = document.querySelector(".logo");
+  const menuBtn = document.querySelector(".menu");
+  const contactBtn = document.querySelector(".contact")
 
   const _clearContent = () => {
     Array.from(_mainContent.children).forEach(item => {
@@ -74,7 +78,20 @@ const renderContent = (() => {
 
   window.addEventListener("load", () => {
     loadMainPage;
-  })
+    loadHomeContents();
+  });
 
+  logoBtn.addEventListener("click", () => {
+    _clearContent();
+    loadHomeContents();
+  });
+
+  menuBtn.addEventListener("click", () => {
+    _clearContent();
+  });
+
+  contactBtn.addEventListener("click", () => {
+    _clearContent();
+  });
   
 })();

@@ -1,7 +1,9 @@
+"use strict";
+
 const loadMainPage = (() => {
   const contentContainer = document.getElementById("content");
+
   const headerTag = document.createElement("header");
-  
   const accessibilityContain = document.createElement("div");
   accessibilityContain.id = "accessibility-container";
   accessibilityContain.tabIndex = "0";
@@ -24,7 +26,6 @@ const loadMainPage = (() => {
 
   const themeTrack = document.createElement("div");
   themeTrack.className = "theme-toggle-track";
-  themeContainer.appendChild(themeTrack);
 
   const themeSwitch = document.createElement("span");
   const themeIcon = document.createElement("i");
@@ -32,8 +33,9 @@ const loadMainPage = (() => {
   themeIcon.classList.add("material-icons", "md-18");
   themeIcon.textContent = "wb_sunny";
   themeSwitch.appendChild(themeIcon);
+
+  themeContainer.appendChild(themeTrack);
   themeContainer.appendChild(themeSwitch);
-  accessibilityContents.appendChild(themeContainer);
 
   const accessibilityTab = document.createElement("div");
   const tabTextNode = document.createTextNode("Display & Accessibility")
@@ -45,13 +47,14 @@ const loadMainPage = (() => {
   tabSpan.appendChild(tabArrow);
   accessibilityTab.appendChild(tabSpan);
   accessibilityTab.appendChild(tabTextNode);
+
+  accessibilityContents.appendChild(themeContainer);
   accessibilityContents.appendChild(accessibilityTab);
   accessibilityContain.appendChild(accessibilityContents);
-  headerTag.appendChild(accessibilityContain);
 
   const upperNav = document.createElement("nav");
   const logo = document.createElement("div");
-  const logoText = document.createElement("a");
+  const logoText = document.createElement("button");
   const logoSpan = document.createElement("span");
   upperNav.className = "upper-nav";
   logo.className = "logo";
@@ -60,36 +63,37 @@ const loadMainPage = (() => {
   logoSpan.textContent = "Dragon";
   logoText.appendChild(logoSpan);
   logo.appendChild(logoText);
-  upperNav.appendChild(logo);
 
   const navLinks = document.createElement("div");
   const linkList = document.createElement("ul");
   const link1 = document.createElement("li");
-  const link1Contents = document.createElement("a");
+  const link1Contents = document.createElement("button");
   const link2 = document.createElement("li");
-  const link2Contents = document.createElement("a");
+  const link2Contents = document.createElement("button");
   navLinks.className = "nav-links";
   link1Contents.setAttribute("href", "#");
-  link1Contents.className = "link";
+  link1Contents.classList.add("link", "menu");
   link1Contents.textContent = "Menu";
-  link1.appendChild(link1Contents);
-  linkList.appendChild(link1);
   link2Contents.setAttribute("href", "#");
-  link2Contents.className = "link";
+  link2Contents.classList.add("link", "contact");
   link2Contents.textContent = "Contact Us";
+
+  link1.appendChild(link1Contents);
   link2.appendChild(link2Contents);
+  linkList.appendChild(link1);
   linkList.appendChild(link2);
   navLinks.appendChild(linkList);
+
+  upperNav.appendChild(logo);
   upperNav.appendChild(navLinks);
+  headerTag.appendChild(accessibilityContain);
   headerTag.appendChild(upperNav);
-  contentContainer.appendChild(headerTag);
 
   const mainTag = document.createElement("main");
   const mainContainer = document.createElement("div");
   mainTag.id = "main";
   mainContainer.className = "main-container";
   mainTag.appendChild(mainContainer);
-  contentContainer.appendChild(mainTag);
 
   const footerTag = document.createElement("footer");
   const leftFoot = document.createElement("div");
@@ -97,8 +101,7 @@ const loadMainPage = (() => {
   leftFoot.className = "left-footer";
   copyright.id = "copyright";
   copyright.textContent = "© 2021 Cabbage Corp.";
-  leftFoot.appendChild(copyright);
-  
+
   const credit = document.createElement("p");
   const creditLink = document.createElement("a");
   credit.textContent = "Background image credit: ";
@@ -106,7 +109,6 @@ const loadMainPage = (() => {
       "https://www.pexels.com/@wildlittlethingsphoto");
   creditLink.textContent = "Helena Lopes";
   credit.appendChild(creditLink);
-  leftFoot.appendChild(credit);
 
   const lowerNav = document.createElement("nav");
   const lowerLink = document.createElement("a");
@@ -114,8 +116,6 @@ const loadMainPage = (() => {
   lowerLink.setAttribute("href", "#content");
   lowerLink.textContent = "Back to top";
   lowerNav.appendChild(lowerLink);
-  leftFoot.appendChild(lowerNav);
-  footerTag.appendChild(leftFoot);
 
   const rightFoot = document.createElement("div");
   const createdBy = document.createElement("div");
@@ -125,7 +125,6 @@ const loadMainPage = (() => {
   odinLink.setAttribute("href", "https://www.theodinproject.com");
   odinLink.textContent = "The Odin Project";
   createdBy.appendChild(odinLink);
-  rightFoot.appendChild(createdBy);
 
   const gitLink = document.createElement("a");
   const gitImage = document.createElement("img");
@@ -134,9 +133,17 @@ const loadMainPage = (() => {
       "images/github-logos/GitHub-Mark-Light-64px.png");
   gitImage.setAttribute("alt", "The GitHub logo");
   gitLink.appendChild(gitImage);
+
+  leftFoot.appendChild(copyright);
+  leftFoot.appendChild(credit);
+  leftFoot.appendChild(lowerNav);
+  rightFoot.appendChild(createdBy);
   rightFoot.appendChild(gitLink);
+  footerTag.appendChild(leftFoot);
   footerTag.appendChild(rightFoot);
 
+  contentContainer.appendChild(headerTag);
+  contentContainer.appendChild(mainTag);
   contentContainer.appendChild(footerTag);
 })();
 
