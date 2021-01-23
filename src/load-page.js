@@ -1,6 +1,6 @@
 "use strict";
 
-const loadMainPage = () => {
+const loadMainPage = (() => {
   const contentContainer = document.getElementById("content");
 
   const headerTag = document.createElement("header");
@@ -145,6 +145,6 @@ const loadMainPage = () => {
   contentContainer.appendChild(headerTag);
   contentContainer.appendChild(mainTag);
   contentContainer.appendChild(footerTag);
-};
+})();
 
 export default loadMainPage

@@ -2,6 +2,7 @@
 
 import loadMainPage from "./load-page";
 import loadHomeContents from "./home";
+import loadMenuContents from "./menu";
 
 const siteSettings = (() => {
   const saveToLocal = () => {
@@ -77,8 +78,8 @@ const renderContent = (() => {
   };
 
   window.addEventListener("load", () => {
-    // loadMainPage;
-    // loadHomeContents();
+    // loadMainPage();
+    loadHomeContents();
   });
 
   logoBtn.addEventListener("click", () => {
@@ -88,10 +89,11 @@ const renderContent = (() => {
 
   menuBtn.addEventListener("click", () => {
     _clearContent();
+    loadMenuContents();
   });
 
-  contactBtn.addEventListener("click", () => {
-    _clearContent();
-  });
+  // contactBtn.addEventListener("click", () => {
+  //   _clearContent();
+  // });
   
 })();

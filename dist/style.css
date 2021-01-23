@@ -335,13 +335,18 @@ footer a {
 
 .review-container p {
   padding: 15px;
-  background-color: var(--review-bg);
+  background-color: var(--color-secondary-var);
+  color: var(--text-black-high);
   border-bottom-right-radius: 25px;
+  border-top-right-radius: 25px;
+  border-top-left-radius: 25px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.75);
   font-size: 1.1rem;
 }
 
 .review-container p:nth-of-type(2) {
+  background-color: var(--review-bg);
+  color: var(--main-text);
   border-bottom-right-radius: 0;
   border-bottom-left-radius: 25px;
 }
