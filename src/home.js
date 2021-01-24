@@ -5,13 +5,16 @@ const loadHomeContents = () => {
 
   const noticeContain = document.createElement("article");
   const noticeHead = document.createElement("h1");
-  const noticeContent = document.createElement("p");
+  const noticeContent1 = document.createElement("p");
+  const noticeContent2 = document.createElement("p");
   noticeContain.classList.add("tab-container", "notice-container");
   noticeHead.textContent = "COVID-19";
-  noticeContent.textContent = 'Due to the COVID-19 pandemic, The Jasmine Dragon is currently closed for dine-in services. In lieu of this, we now offer park-and-dine and pick-up-and-go services.<br><br>Not able to hop on your flying bison to come to us? Let us air scooter to you! Download the Honorable Eats app, "the only food delivery app serving all five nations with honor", to place an order and we\'ll deliver to you. Please note, we add a 20% surcharge on every delivery order as a tip for our deliverybenders.'
+  noticeContent1.textContent = 'Due to the COVID-19 pandemic, The Jasmine Dragon is currently closed for dine-in services. In lieu of this, we now offer park-and-dine and pick-up-and-go services.'
+  noticeContent2.textContent = 'Not able to hop on your flying bison to come to us? Let us air scooter to you! Download the Honorable Eats app, "the only food delivery app serving all five nations with honor", to place an order and we\'ll deliver to you. Please note, we add a 20% surcharge on every delivery order as a tip for our deliverybenders.'
  
   noticeContain.appendChild(noticeHead);
-  noticeContain.appendChild(noticeContent);
+  noticeContain.appendChild(noticeContent1);
+  noticeContain.appendChild(noticeContent2);
 
   const reviewContain = document.createElement("article");
   const reviewHead = document.createElement("h1");
