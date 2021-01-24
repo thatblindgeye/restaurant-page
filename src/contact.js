@@ -55,7 +55,7 @@ const loadContactContents = () => {
   submit.setAttribute("value", "Send");
   submit.addEventListener("click", (e) => {
     e.preventDefault();
-    submitForm();
+    authenticateForm.submitForm();
   });
   
   fieldset.appendChild(nameInput);
@@ -153,12 +153,15 @@ const loadContactContents = () => {
   mainContainer.appendChild(hoursContainer);
 };
 
-const submitForm = () => {
-  const inputs = document.querySelectorAll(".input");
-  Array.from(inputs).forEach(input => {
-    input.value = "";
-  });
-  alert("Thank you for messaging us! You should hear a response within 48 hours at the email address provided.")
-};
+const authenticateForm = (() => {
+  const submitForm = () => {
+    const inputs = document.querySelectorAll(".input");
+    Array.from(inputs).forEach(input => {
+      input.value = "";
+    });
+    alert("Thank you for messaging us! You should hear a response within 48 hours at the email address provided.")
+  };
+  return {submitForm};
+})();
 
 export default loadContactContents
