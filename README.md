@@ -3,6 +3,8 @@
 ## Description
 This is my submission for the Restaurant project for <a href="https://www.theodinproject.com">The Odin Project</a>. I themed this project after The Jasmine Dragon, a tea shop founded by the character Iroh from the television show <a href="https://en.wikipedia.org/wiki/Avatar:_The_Last_Airbender">Avatar: The Last Airbender</a>.
 
+Check out the live-demo of your soon-to-be favorite tea spot, <a href="https://thatblindgeye.github.io/restaurant-page/">The Jasmine Dragon</a>.
+
 ## Built With...
 - CSS
 - HTML
