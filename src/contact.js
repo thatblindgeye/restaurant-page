@@ -17,13 +17,12 @@ const loadContactContents = () => {
   addressContainer.appendChild(addressPhone);
   contactContainer.appendChild(addressContainer);
 
+  const form = document.createElement("form");
   const fieldset = document.createElement("fieldset");
-  fieldset.className = "message-form";
   const legend = document.createElement("legend");
   legend.textContent = "Or send us a message:";
   fieldset.appendChild(legend);
 
-  const form = document.createElement("form");
   const nameInput = document.createElement("input");
   const nameLabel = document.createElement("label");
   nameInput.id = "sender-name";
@@ -59,15 +58,15 @@ const loadContactContents = () => {
     submitForm();
   });
   
-  form.appendChild(nameInput);
-  form.appendChild(nameLabel);
-  form.appendChild(emailInput);
-  form.appendChild(emailLabel);
-  form.appendChild(messageArea);
-  form.appendChild(messageLabel);
-  form.appendChild(submit);
-  fieldset.appendChild(form);
-  contactContainer.appendChild(fieldset);
+  fieldset.appendChild(nameInput);
+  fieldset.appendChild(nameLabel);
+  fieldset.appendChild(emailInput);
+  fieldset.appendChild(emailLabel);
+  fieldset.appendChild(messageArea);
+  fieldset.appendChild(messageLabel);
+  fieldset.appendChild(submit);
+  form.appendChild(fieldset);
+  contactContainer.appendChild(form);
   mainContainer.appendChild(contactContainer);
 
   const hoursContainer = document.createElement("section");

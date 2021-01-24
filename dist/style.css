@@ -452,6 +452,10 @@ footer a,
   text-align: left;
 }
 
+.contact {
+  width: 50%;
+}
+
 .contact address {
   font-style: normal;
 }
@@ -460,21 +464,22 @@ footer a,
   padding: 2px;
 }
 
-.message-form {
+form {
   width: 100%;
   margin: 25px 0 0;
+  padding: 5px;
+}
+
+form fieldset {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   padding: 0;
   border: none;
 }
 
-.message-form legend {
+form legend {
   margin: 10px 0;
-}
-
-.message-form form {
-  display: flex;
-  flex-direction: column;
-  padding: 5px;
 }
 
 form input {
@@ -486,8 +491,10 @@ form input {
 }
 
 form label {
+  align-self: flex-start;
   margin-bottom: 30px;
   padding: 5px 5px 0;
+  font-size: 1.1rem;
 }
 
 form textarea {
@@ -523,7 +530,6 @@ form input[type="submit"]:hover,
 form input[type="submit"]:focus {
   background-color:  rgba(200, 200, 200, 1);
 }
-
 
 .restaurant-hours {
   height: max-content;
@@ -611,10 +617,6 @@ footer a:focus {
 }
 
 @media only screen and (max-width: 1205px) {
-  .contact {
-    width: 40%;
-  }
-
   .restaurant-hours {
     width: 45%;
   }
@@ -674,6 +676,11 @@ footer a:focus {
     margin: 15px 0;
     padding: 0;
     border: 0;
+  }
+
+  .contact,
+  .restaurant-hours {
+    width: 100%;
   }
 }
 
