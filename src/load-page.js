@@ -1,6 +1,6 @@
 "use strict";
 
-const loadMainPage = (() => {
+const mainPage = (() => {
   const contentContainer = document.getElementById("content");
 
   const headerTag = document.createElement("header");
@@ -105,8 +105,7 @@ const loadMainPage = (() => {
   const credit = document.createElement("p");
   const creditLink = document.createElement("a");
   credit.textContent = "Background image credit: ";
-  creditLink.setAttribute("href", 
-      "https://www.pexels.com/@wildlittlethingsphoto");
+  creditLink.setAttribute("href", "https://www.pexels.com/@wildlittlethingsphoto");
   creditLink.textContent = "Helena Lopes";
   credit.appendChild(creditLink);
 
@@ -147,4 +146,4 @@ const loadMainPage = (() => {
   contentContainer.appendChild(footerTag);
 })();
 
-export default loadMainPage
+export {mainPage}

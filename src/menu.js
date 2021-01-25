@@ -72,82 +72,86 @@ const menu = (() => {
   };
 })();
 
-const loadMenuContents = () => {
-  const mainContainer = document.querySelector(".main-container");
+const menuPage = (() => {
+  const renderPage = () => {
+    const mainContainer = document.querySelector(".main-container");
 
-  const menuLinkContainer = document.createElement("div");
-  const menuMainHead = document.createElement("h1");
-  menuLinkContainer.className = "menu-links";
-  menuMainHead.textContent = "Menu";
-  menuLinkContainer.appendChild(menuMainHead);
+    const menuLinkContainer = document.createElement("div");
+    const menuMainHead = document.createElement("h1");
+    menuLinkContainer.className = "menu-links";
+    menuMainHead.textContent = "Menu";
+    menuLinkContainer.appendChild(menuMainHead);
+  
+    const menuLinkList = document.createElement("ul");
+    const menuContainer = document.createElement("article");
+    menuContainer.className = "menu-container";
+  
+    menu.sections.forEach(({name, pageLink}) => {
+      const menuLink = document.createElement("li");
+      const menuLinkContents = document.createElement("a");
+      menuLinkContents.className = "link";
+      menuLinkContents.setAttribute("href", pageLink);
+      menuLinkContents.textContent = name;
+      menuLink.appendChild(menuLinkContents);
+      menuLinkList.appendChild(menuLink);
+      menuLinkContainer.appendChild(menuLinkList);
+  
+      const sectionContainer = document.createElement("section");
+      const sectionHeader = document.createElement("h2");
+      const sectionGrid = document.createElement("div");
+      sectionContainer.id = name.toLowerCase();
+      sectionHeader.textContent = name;
+      sectionGrid.classList.add("menu-grid");
+  
+      sectionContainer.appendChild(sectionHeader);
+      sectionContainer.appendChild(sectionGrid);
+      menuContainer.appendChild(sectionContainer);
+    });
+  
+    mainContainer.appendChild(menuLinkContainer);
+    mainContainer.appendChild(menuContainer);
+  
+    menu.shareableItems.forEach(({name, description}) => {
+      const itemContainer = document.createElement("div");
+      const itemName = document.createElement("h3");
+      const itemDescription = document.createElement("p");
+      itemContainer.className = "menu-item";
+      itemName.textContent = name;
+      itemDescription.textContent = description;
+  
+      itemContainer.appendChild(itemName);
+      itemContainer.appendChild(itemDescription);
+      document.querySelector("#shareables .menu-grid").appendChild(itemContainer);
+    });
+  
+    menu.entreeItems.forEach(({name, description}) => {
+      const itemContainer = document.createElement("div");
+      const itemName = document.createElement("h3");
+      const itemDescription = document.createElement("p");
+      itemContainer.className = "menu-item";
+      itemName.textContent = name;
+      itemDescription.textContent = description;
+  
+      itemContainer.appendChild(itemName);
+      itemContainer.appendChild(itemDescription);
+      document.querySelector("#entrees .menu-grid").appendChild(itemContainer);
+    });
+  
+    menu.teaItems.forEach(({name, description}) => {
+      const itemContainer = document.createElement("div");
+      const itemName = document.createElement("h3");
+      const itemDescription = document.createElement("p");
+      itemContainer.className = "menu-item";
+      itemName.textContent = name;
+      itemDescription.textContent = description;
+  
+      itemContainer.appendChild(itemName);
+      itemContainer.appendChild(itemDescription);
+      document.querySelector("#tea .menu-grid").appendChild(itemContainer);
+    });
+  };
 
-  const menuLinkList = document.createElement("ul");
-  const menuContainer = document.createElement("article");
-  menuContainer.className = "menu-container";
+  return {renderPage}
+})();
 
-  menu.sections.forEach(({name, pageLink}) => {
-    const menuLink = document.createElement("li");
-    const menuLinkContents = document.createElement("a");
-    menuLinkContents.className = "link";
-    menuLinkContents.setAttribute("href", pageLink);
-    menuLinkContents.textContent = name;
-    menuLink.appendChild(menuLinkContents);
-    menuLinkList.appendChild(menuLink);
-    menuLinkContainer.appendChild(menuLinkList);
-
-    const sectionContainer = document.createElement("section");
-    const sectionHeader = document.createElement("h2");
-    const sectionGrid = document.createElement("div");
-    sectionContainer.id = name.toLowerCase();
-    sectionHeader.textContent = name;
-    sectionGrid.classList.add("menu-grid");
-
-    sectionContainer.appendChild(sectionHeader);
-    sectionContainer.appendChild(sectionGrid);
-    menuContainer.appendChild(sectionContainer);
-  });
-
-  mainContainer.appendChild(menuLinkContainer);
-  mainContainer.appendChild(menuContainer);
-
-  menu.shareableItems.forEach(({name, description}) => {
-    const itemContainer = document.createElement("div");
-    const itemName = document.createElement("h3");
-    const itemDescription = document.createElement("p");
-    itemContainer.className = "menu-item";
-    itemName.textContent = name;
-    itemDescription.textContent = description;
-
-    itemContainer.appendChild(itemName);
-    itemContainer.appendChild(itemDescription);
-    document.querySelector("#shareables .menu-grid").appendChild(itemContainer);
-  });
-
-  menu.entreeItems.forEach(({name, description}) => {
-    const itemContainer = document.createElement("div");
-    const itemName = document.createElement("h3");
-    const itemDescription = document.createElement("p");
-    itemContainer.className = "menu-item";
-    itemName.textContent = name;
-    itemDescription.textContent = description;
-
-    itemContainer.appendChild(itemName);
-    itemContainer.appendChild(itemDescription);
-    document.querySelector("#entrees .menu-grid").appendChild(itemContainer);
-  });
-
-  menu.teaItems.forEach(({name, description}) => {
-    const itemContainer = document.createElement("div");
-    const itemName = document.createElement("h3");
-    const itemDescription = document.createElement("p");
-    itemContainer.className = "menu-item";
-    itemName.textContent = name;
-    itemDescription.textContent = description;
-
-    itemContainer.appendChild(itemName);
-    itemContainer.appendChild(itemDescription);
-    document.querySelector("#tea .menu-grid").appendChild(itemContainer);
-  });
-};
-
-export default loadMenuContents
+export default menuPage

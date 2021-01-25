@@ -1,9 +1,9 @@
 "use strict";
 
-import loadMainPage from "./load-page";
-import loadHomeContents from "./home";
-import loadMenuContents from "./menu";
-import loadContactContents from "./contact";
+import mainPage from "./load-page";
+import homePage from "./home";
+import menuPage from "./menu";
+import contactPage from "./contact";
 
 const siteSettings = (() => {
   const saveToLocal = () => {
@@ -79,22 +79,21 @@ const renderContent = (() => {
   };
 
   window.addEventListener("load", () => {
-    // loadMainPage();
-    loadHomeContents();
+    homePage.renderPage();
   });
 
   logoBtn.addEventListener("click", () => {
     _clearContent();
-    loadHomeContents();
+    homePage.renderPage();
   });
 
   menuBtn.addEventListener("click", () => {
     _clearContent();
-    loadMenuContents();
+    menuPage.renderPage();
   });
 
   contactBtn.addEventListener("click", () => {
     _clearContent();
-    loadContactContents();
+    contactPage.renderPage();
   });
 })();
