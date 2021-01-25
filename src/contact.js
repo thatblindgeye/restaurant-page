@@ -1,5 +1,42 @@
 "use strict";
 
+const restaurantHours = (() => {
+  const hours = [
+    {
+      day: "Monday",
+      open: "6:00",
+      close: "20:00"
+    }, 
+    {
+      day: "Tuesday",
+      open: "6:00",
+      close: "20:00"
+    }, 
+    {
+      day: "Wednesday",
+      open: "6:00",
+      close: "20:00"
+    }, 
+    {
+      day: "Thursday",
+      open: "6:00",
+      close: "22:00"
+    }, 
+    {
+      day: "Friday & Saturday",
+      open: "5:00",
+      close: "22:00"
+    }, 
+    {
+      day: "Sunday",
+      open: "8:00",
+      close: "20:00"
+    }, 
+  ];
+
+  return {hours}
+})();
+
 const loadContactContents = () => {
   const mainContainer = document.querySelector(".main-container");
 
@@ -92,40 +129,7 @@ const loadContactContents = () => {
   tableHead.appendChild(headRow);
   table.appendChild(tableHead);
 
-  const hours = [
-    {
-      day: "Monday",
-      open: "6:00",
-      close: "22:00"
-    }, 
-    {
-      day: "Tuesday",
-      open: "6:00",
-      close: "22:00"
-    }, 
-    {
-      day: "Wednesday",
-      open: "6:00",
-      close: "22:00"
-    }, 
-    {
-      day: "Thursday",
-      open: "6:00",
-      close: "22:00"
-    }, 
-    {
-      day: "Friday & Saturday",
-      open: "6:00",
-      close: "22:00"
-    }, 
-    {
-      day: "Sunday",
-      open: "6:00",
-      close: "22:00"
-    }, 
-  ];
-
-  hours.forEach(({day, open, close}) => {
+  restaurantHours.hours.forEach(({day, open, close}) => {
     const row = document.createElement("tr");
     const rowHead = document.createElement("th");
     rowHead.setAttribute("scope", "row");

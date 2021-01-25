@@ -1,5 +1,24 @@
 "use strict";
 
+const reviews = (() => {
+  const reviewList = [
+    {
+      quote: "Ba Sing Se's #1 cafe! I visit at least twice a day!"
+    }, 
+    {
+      quote: "You won't tea-leaf how wonderful the food and atmosphere is!"
+    }, 
+    {
+      quote: "There is no war in Ba Sing Se!"
+    }, 
+    {
+      quote: "It's the quenchiest!"
+    }, 
+  ];
+
+  return {reviewList};
+})();
+
 const loadHomeContents = () => {
   const mainContainer = document.querySelector(".main-container");
 
@@ -22,19 +41,7 @@ const loadHomeContents = () => {
   reviewHead.textContent = "What customers are saying...";
   reviewContain.appendChild(reviewHead);
 
-  const reviewList = [
-    {
-      quote: "Ba Sing Se's #1 cafe! I visit at least twice a day!"
-    }, 
-    {
-      quote: "You won't tea-leaf how wonderful the food and atmosphere is!"
-    }, 
-    {
-      quote: "There is no war in Ba Sing Se!"
-    }, 
-  ];
-
-  reviewList.forEach(({quote}) => {
+  reviews.reviewList.forEach(({quote}) => {
     const reviewContent = document.createElement("p");
     const reviewQuote = document.createElement("q");
     reviewQuote.textContent = quote;

@@ -322,6 +322,7 @@ footer a,
 }
 
 .tab-container {
+  height: max-content;
   padding: 30px;
   background-color: var(--main-card-bg);
   color: var(--main-text);
@@ -529,10 +530,6 @@ form input[type="submit"]:hover {
 form input[type="submit"]:hover, 
 form input[type="submit"]:focus {
   background-color:  rgba(200, 200, 200, 1);
-}
-
-.restaurant-hours {
-  height: max-content;
 }
 
 .restaurant-hours caption {
